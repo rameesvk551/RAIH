@@ -23,6 +23,8 @@ const userAuthRepo = {
       email: data.email,
       password: hashedPassword,
       isVerified: false,
+      lastName:data.lastName,
+      firstName:data.firstName
     });
 
    

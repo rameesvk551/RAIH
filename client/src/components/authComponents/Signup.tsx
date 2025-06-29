@@ -9,7 +9,6 @@ import axios from 'axios'
 import { FcGoogle } from 'react-icons/fc'
 import { toast } from 'react-toastify'
 
-
 const Signup = () => {
   const navigate=useNavigate()
 
@@ -24,6 +23,7 @@ const Signup = () => {
 
   
   }
+  const server="http://localhost:5001/api/v1"
  const form=useForm<formValues>()
  const {register,handleSubmit,watch,formState}=form
  const {errors}=formState
@@ -41,8 +41,8 @@ const Signup = () => {
     }
   
     try {
-     
-      const response = await axios.post(`${server}/signup`, formData, { withCredentials: true });
+    
+      const response = await axios.post(`${server}/user/register`, formData, { withCredentials: true });
       const data = response.data; 
       toast.error("Signup completed");
 navigate(`/host/add-details/${data.host._id}`)
@@ -60,7 +60,7 @@ navigate(`/host/add-details/${data.host._id}`)
   return (
     <div className='flex w-full h-[100vh]'>
       {/* LEFT */}
-      <div className='hidden md:flex flex-col gap-y-5 w-1/3 h-full bg-black items-center justify-center px-8 text-center'>
+      <div className='hidden md:flex flex-col gap-y-5 w-2/5 h-full bg-black items-center justify-center px-8 text-center'>
   <h5 className="text-3xl font-bold tracking-wide text-gray-900 uppercase">
     <span className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-transparent bg-clip-text">RAIH</span>
   </h5>
@@ -71,7 +71,7 @@ navigate(`/host/add-details/${data.host._id}`)
 </div>
 
       {/* RIGHT */}
-      <div className='flex w-full md:w-2/3 h-full bg-white dark:bg-gradient-to-b md:dark:bg-gradient-to-r from-black via-[#071b3e] to-black items-center px-4 md:px-20 lg:px-40'>
+      <div className='flex w-full md:w-3/5 h-full bg-white dark:bg-gradient-to-b md:dark:bg-gradient-to-r from-black via-[#071b3e] to-black items-center px-4 md:px-20 lg:px-40'>
         <div className='w-full h-full flex flex-col items-center justify-center py-12 px-4 sm:px-0 lg:px-8'>
           <div className='block mb-10 md:hidden -ml-8'>
             <Logo />

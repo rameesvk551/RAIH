@@ -159,7 +159,7 @@ const isAuthenticated=false
                     <hr />
                     <button
                       className="w-full text-left px-5 py-3 text-gray-700 hover:bg-gray-100 transition-all"
-                      onClick={goToProfile}
+                      //onClick={goToProfile}
                     >
                       Profile
                     </button>
