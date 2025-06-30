@@ -2,7 +2,7 @@ import  { useState } from 'react'
 import Button from "../Button"
 import Divider from "../Divider"
 import Logo from "../Logo"
-import Inputbox from "../Inputbox"
+import Inputbox from "../InputBox"
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from 'axios'

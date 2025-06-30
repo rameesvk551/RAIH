@@ -3,8 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const HeroSection = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+const HeroSection = () => {  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
