@@ -1,20 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { FaHeart, FaTimes, FaEnvelope } from "react-icons/fa";
-import { MdHotel, MdOutlineFlight } from "react-icons/md";
+import { FaTimes, FaEnvelope } from "react-icons/fa";
+import { MdHotel } from "react-icons/md";
 import { FaTaxi } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom"
 
 import { BiMessageMinus } from "react-icons/bi";
 
-import axios from "axios";
+//mport axios from "axios";
 import { toast } from "react-toastify";
 
 
 const Navbar = () => {
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [showFavorites, setShowFavorites] = useState(false);
+ // const [showFavorites, setShowFavorites] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
 const isAuthenticated=false
@@ -61,8 +61,7 @@ const isAuthenticated=false
     setShowProfileMenu(false);
   
     try {
-      let url = '';
-  
+   
     //   if (hostData?.host?._id) {
     //     url = `${server}/host/logout`;
     //   } else if (volenteerData?.user) {
@@ -90,7 +89,7 @@ const isAuthenticated=false
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setIsOpen(false);
-        setShowFavorites(false);
+       // setShowFavorites(false);
       }
     };
 
