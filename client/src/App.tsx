@@ -8,7 +8,7 @@ import Router from "./routes/Router";
 function App() {
   return (
     <BrowserRouter>
-      <Suspense fallback={<div className="text-center p-10">Loading...</div>}>
+      <Suspense fallback={<div className="text-center p-20">Loading...</div>}>
         <Router />
       </Suspense>
       <ToastContainer />
