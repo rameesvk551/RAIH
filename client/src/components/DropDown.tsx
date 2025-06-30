@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from "react";
 import { CiMenuKebab } from 'react-icons/ci'
 
 const DropDown: React.FC = () => {
   const [dropDownOpen, setDropDownOpen] = useState<boolean>(false);
-  const trigger = useRef<HTMLDivElement>(null);
-  const dropDownRef = useRef<HTMLDivElement>(null); // updated type
+  const trigger = useRef<HTMLButtonElement>(null); // ✅ fixed type
+  const dropDownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const clickHandler = (event: MouseEvent) => {
@@ -38,7 +38,7 @@ const DropDown: React.FC = () => {
     <div className='relative flex'>
       <button
         className='text-[#98A6AD] hover:text-gray-200'
-        ref={trigger}
+        ref={trigger} // ✅ now correctly typed
         onClick={() => setDropDownOpen((prev) => !prev)}
       >
         <CiMenuKebab size={24} />
@@ -56,4 +56,4 @@ const DropDown: React.FC = () => {
   );
 };
 
-export default DropDown;
+export default DropDown
